@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<div>
+		<h2>JS caluculator</h2>
+
+		<h5>Number 1</h5>
+		<form>
+			<input type="number" name="num1" id="num1">
+		</form>
+
+		<h5>Number 2</h5>
+		<form>
+			<input type="number" name="num2" id="num2">
+		</form>
+
+		<h5>Operate Way</h5>
+		<select id="selection">
+			<option id="+">+</option>
+			<option id="-">-</option>
+			<option id="*">*</option>
+			<option id="/">/</option>
+		</select>
+
+		<br><br>
+
+		<input type="button" name="execute" id="executeButton" value="execute" onclick="calculate()">
+
+		<p id="result">Result = </p>
+	</div>
+
+	<script type="text/javascript">
+		function calculate() {
+			var firstNumber = document.getElementById("num1").value;
+			var secondNumber = document.getElementById("num2").value;
+			var operateWay = document.getElementById("selection").value;
+			if (operateWay == "+"){
+				var result = firstNumber + secondNumber
+			}
+			if (operateWay == "-"){
+				var result = firstNumber - secondNumber
+			}
+			if (operateWay == "*"){
+				var result = firstNumber * secondNumber
+			}
+			if (operateWay == "/"){
+				var result = firstNumber / secondNumber
+			}
+			var addResult = document.createTextNode(result)
+			document.getElementById("result").appendChild(addResult)
+		}
+
+	</script>
+</body>
+</html>
